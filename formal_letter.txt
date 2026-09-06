@@ -1,0 +1,107 @@
+BỘ TEMPLATE FORMAL LETTER (VSTEP WRITING TASK 1)
+1. LỜI CHÀO (SALUTATION)
+Nếu KHÔNG biết tên người nhận:
+
+Dear Sir or Madam,
+
+Nếu BIẾT tên người nhận:
+
+Nam: Dear Mr. [Họ], (Ví dụ: Dear Mr. Vance,)
+
+Nữ (chưa/đã kết hôn nói chung): Dear Ms. [Họ],
+
+Nữ đã kết hôn: Dear Mrs. [Họ],
+
+2. ĐOẠN MỞ ĐẦU (OPENING PARAGRAPH)
+Trường hợp 1: Hồi đáp một thư trước đó (như bài tập trước của bạn)
+Thank you very much for your last letter.
+
+I am writing this letter to provide you with the information you requested.
+
+Trường hợp 2: Bắt đầu một thư mới (khiếu nại, hỏi thông tin, xin đổi khóa học...)
+Để khiếu nại / phàn nàn:
+
+I am writing this letter to express my dissatisfaction regarding [vấn đề]...
+
+Để hỏi thông tin:
+
+I am writing this letter to inquire about [vấn đề/khóa học]...
+
+Để thông báo:
+
+I am writing this letter to inform you that [nội dung]...
+
+Để yêu cầu hỗ trợ:
+
+I am writing this letter to ask for your help in [việc cần giúp]...
+
+Để đề cập chung về một vấn đề (rất đa dụng):
+
+I am writing this letter with regard to [vấn đề]...
+
+3. THÂN BÀI (BODY PARAGRAPHS)
+Quy tắc: Chia thành 1–2 đoạn thân bài rõ ràng, trả lời lần lượt từng gạch đầu dòng của đề bài. Dùng các từ nối để tạo mạch văn tự nhiên.
+
+A. Giới thiệu học vấn & kinh nghiệm (Job / Course Application)
+Học vấn:
+
+I have a Bachelor’s degree in [Chuyên ngành] from [Tên trường Đại học].
+
+Last year, I obtained a [Tên chứng chỉ, ví dụ: B1 VSTEP certificate / TOEIC certificate].
+
+Kinh nghiệm:
+
+I have over [số năm] years of experience as a [chức danh công việc] at [tên công ty].
+
+My main responsibilities include [công việc chính dạng V-ing].
+
+B. Nêu lý do / Nguyện vọng
+Lý do chọn khóa học / công việc:
+
+Firstly, I am interested in [khóa học/nước sở tại] because [lý do]...
+
+The main reason for choosing this course is that [lý do]...
+
+Kỳ vọng sau khóa học / mục tiêu nghề nghiệp:
+
+I hope this course provides me with practical knowledge so that I can manage my projects better.
+
+My salary expectations are [mức lương, ví dụ: $1,500 / 15,000,000 VND] per month.
+
+C. Trình bày vấn đề & Đưa ra yêu cầu (Complaint / Request)
+Nêu vấn đề gặp phải:
+
+Regarding the current situation, I have encountered some difficulties with [lịch học / nội dung]...
+
+Đưa ra đề nghị / giải pháp lịch sự:
+
+Would you kindly + [V nguyên mẫu]...? (Ví dụ: Would you kindly allow me to transfer to the evening class?)
+
+Therefore, I would appreciate it if you could [hành động mong muốn]...
+
+4. ĐOẠN KẾT (CLOSING PARAGRAPH)
+Dùng trọn vẹn bộ câu chuẩn này cho mọi bài Formal Letter:
+
+Câu mời liên hệ (chú ý luôn có "do not"):
+
+If you require any further information, please do not hesitate to contact me via email: [email của bạn, ví dụ: brian123@gmail.com].
+
+Câu cảm ơn & mong đợi phản hồi:
+
+Thank you in advance for your consideration. (dùng khi nộp đơn, xin việc, nhờ xét duyệt)
+
+(Hoặc) Thank you in advance for your assistance. (dùng khi khiếu nại, nhờ giải quyết sự cố)
+
+I look forward to hearing from you soon. (hoặc: I am looking forward to hearing from you soon.)
+
+5. KÝ TÊN & KẾT THÚC THƯ (SIGN-OFF)
+Nếu mở đầu bằng Dear Sir or Madam, (không rõ tên):
+
+Plaintext
+Yours faithfully,
+[Họ và tên của bạn]
+Nếu mở đầu bằng Dear Mr. Vance, / Dear Ms. ... (đã biết rõ tên):
+
+Plaintext
+Yours sincerely,
+[Họ và tên của bạn]

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VSTEP B2 Preparation Master | Ôn Thi 14 Chủ Đề & Luyện Viết Blurting</title>
+  <meta name="description" content="Ứng dụng web ôn thi VSTEP B1/B2 Tiếng Anh với 14 chủ đề Mindmap, công cụ kiểm tra ngẫu nhiên và phương pháp luyện viết Look-Cover-Write-Check (Blurting Method).">
+
+  <!-- Custom Fonts & Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- App Header -->
+  <header class="app-header">
+    <div class="header-container">
+      <a href="#" class="brand">
+        <div class="brand-logo">🎓</div>
+        <div>
+          <span class="brand-title">VSTEP B2 Master</span>
+          <span class="brand-badge">GitHub Pages Ready</span>
+        </div>
+      </a>
+
+      <!-- Navigation Tabs -->
+      <nav class="nav-tabs" role="tablist">
+        <button class="nav-tab active" data-tab="topics-tab" role="tab" id="nav-topics-btn">
+          <span>🧠</span> 14 Chủ Đề & Quiz
+        </button>
+        <button class="nav-tab" data-tab="blurting-tab" role="tab" id="nav-blurting-btn" onclick="renderBlurtingTrainer()">
+          <span>✍️</span> Luyện Viết Blurting
+        </button>
+        <button class="nav-tab" data-tab="templates-tab" role="tab" id="nav-templates-btn">
+          <span>📄</span> Master Templates
+        </button>
+      </nav>
+
+      <!-- Actions -->
+      <div class="header-actions">
+        <button class="theme-toggle-btn" id="theme-toggle" title="Chuyển đổi giao diện Sáng/Tối">☀️</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Workspace -->
+  <main class="main-content">
+
+    <!-- TAB 1: TOPICS & QUIZ -->
+    <section id="topics-tab" class="tab-pane active" role="tabpanel">
+      <div class="section-header">
+        <div>
+          <h1 class="section-title"><span>📚</span> 14 Chủ Đề Tiếng Anh Vstep B2</h1>
+          <p class="section-subtitle">Xem sơ đồ tư duy (Mindmap), tra cứu từ khóa và làm bài kiểm tra chấm điểm ngẫu nhiên.</p>
+        </div>
+
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+          <div class="search-bar">
+            <span style="color: var(--text-dim);">🔍</span>
+            <input type="text" id="topic-search-input" class="search-input" placeholder="Tìm chủ đề hoặc từ khóa...">
+          </div>
+          <button class="btn btn-primary" onclick="startRandomQuiz()">🎲 Bài Kiểm Tra Ngẫu Nhiên</button>
+        </div>
+      </div>
+
+      <!-- Topics Grid -->
+      <div id="topics-grid" class="topics-grid">
+        <!-- Rendered by app.js -->
+      </div>
+
+      <!-- Quiz Workspace Container -->
+      <div id="quiz-box" class="quiz-box" style="display: none;">
+        <div class="quiz-card">
+          <div class="quiz-question-header">
+            <h3 id="quiz-topic-title" style="font-size: 1.2rem; color: var(--accent-teal);">Chủ Đề Kiểm Tra Ngẫu Nhiên</h3>
+            <span class="quiz-badge">VSTEP Quiz Auto-Grader</span>
+          </div>
+
+          <div id="quiz-inputs-container">
+            <!-- Rendered by app.js -->
+          </div>
+
+          <div id="quiz-score-panel" class="score-panel">
+            <!-- Rendered by app.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: BLURTING METHOD TRAINER -->
+    <section id="blurting-tab" class="tab-pane" role="tabpanel">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title"><span>✍️</span> Luyện Viết Theo Phương Pháp Blurting</h2>
+          <p class="section-subtitle">Phương pháp Look-Cover-Write-Check 4 bước kích thích não bộ ghi nhớ sâu cấu trúc bài mẫu Vstep.</p>
+        </div>
+      </div>
+
+      <div id="blurting-workspace">
+        <!-- Rendered by app.js -->
+      </div>
+    </section>
+
+    <!-- TAB 3: MASTER TEMPLATES -->
+    <section id="templates-tab" class="tab-pane" role="tabpanel">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title"><span>📄</span> Master Writing Templates Chuẩn Vstep B2</h2>
+          <p class="section-subtitle">Bộ mẫu chuẩn hóa cho Writing Task 1 (Formal & Informal Letter) và Writing Task 2 (Advantage & Discussion Essay).</p>
+        </div>
+      </div>
+
+      <div id="template-selector-container">
+        <!-- Rendered by app.js -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Modal View Mindmap Tree -->
+  <div id="mindmap-modal" class="modal-overlay" role="dialog" aria-modal="true">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 id="modal-topic-title" class="section-title" style="font-size: 1.2rem;">Sơ Đồ Tư Duy Chủ Đề</h3>
+        <button id="modal-close-btn" class="modal-close" aria-label="Đóng modal">&times;</button>
+      </div>
+      <div id="modal-mindmap-body" class="modal-body">
+        <!-- Rendered by app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="app-footer">
+    <div class="header-container" style="justify-content: center; flex-direction: column; gap: 0.5rem;">
+      <p>🎯 <strong>VSTEP B2 Preparation Master App</strong> — Được thiết kế để đẩy trực tiếp lên GitHub Pages.</p>
+      <p style="color: var(--text-dim);">Dữ liệu 14 Chủ Đề & Bộ Template Viết Chuẩn Hóa © 2026.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/topics_data.js"></script>
+  <script src="js/templates_data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

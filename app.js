@@ -12,6 +12,8 @@ const state = {
   selectedTopic: null,
   quizTopic: null,
   activeBlurtingTemplate: null,
+  activeVersion: 'normal', // 'normal' (Standard B1/B2) or 'masterV2' (Master V2 B2+/C1)
+  selectedTemplateId: 'formal_letter',
   blurtingStep: 1,
   blurtingTimer: null,
   blurtingTimeSeconds: 0,
@@ -27,6 +29,38 @@ function initApp() {
   renderTemplateSelector();
   setupEventListeners();
   updateProgressStats();
+}
+
+/* -------------------------------------------------------------------------- */
+/* VERSION HELPER & SWITCHER                                                  */
+/* -------------------------------------------------------------------------- */
+function getTemplateData(rawTemplate, version = state.activeVersion) {
+  if (!rawTemplate) return null;
+  if (version === 'masterV2' && rawTemplate.masterV2) {
+    return {
+      ...rawTemplate,
+      title: rawTemplate.masterV2.title || rawTemplate.title,
+      targetWords: rawTemplate.masterV2.targetWords || rawTemplate.targetWords,
+      description: rawTemplate.masterV2.description || rawTemplate.description,
+      skeletonText: rawTemplate.masterV2.skeletonText || rawTemplate.skeletonText,
+      sampleText: rawTemplate.masterV2.sampleText || rawTemplate.sampleText,
+      translationVi: rawTemplate.masterV2.translationVi || rawTemplate.translationVi,
+      keywordsSentenceMap: rawTemplate.masterV2.keywordsSentenceMap || rawTemplate.keywordsSentenceMap,
+      structure: rawTemplate.masterV2.structure || rawTemplate.structure
+    };
+  }
+  return rawTemplate;
+}
+
+function setTemplateVersion(version) {
+  state.activeVersion = version;
+  if (state.activeTab === 'templates-tab') {
+    const rawTemplate = TEMPLATES_DATA.find(x => x.id === (state.selectedTemplateId || 'formal_letter'));
+    renderTemplateDetailContent(rawTemplate);
+  } else if (state.activeTab === 'blurting-tab') {
+    state.userTypedText = '';
+    renderBlurtingTrainer();
+  }
 }
 
 /* -------------------------------------------------------------------------- */
@@ -341,8 +375,9 @@ function renderBlurtingTrainer() {
   const container = document.getElementById('blurting-workspace');
   if (!container) return;
 
-  const t = state.activeBlurtingTemplate || TEMPLATES_DATA[0];
-  state.activeBlurtingTemplate = t;
+  const rawTemplate = state.activeBlurtingTemplate || TEMPLATES_DATA[0];
+  state.activeBlurtingTemplate = rawTemplate;
+  const t = getTemplateData(rawTemplate, state.activeVersion);
 
   const currentStep = state.blurtingStep;
 
@@ -355,19 +390,32 @@ function renderBlurtingTrainer() {
       <div class="blurting-step ${currentStep === 4 ? 'active' : ''}">Bước 4: Đối Soát Bút Đỏ</div>
     </div>
 
-    <!-- Template Selector Header -->
+    <!-- Template Selector & Version Switcher Header -->
     <div class="glass-card" style="margin-bottom: 1.5rem;">
       <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
         <div>
-          <h3 style="font-size: 1.2rem; font-weight: 700;">${t.title}</h3>
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <h3 style="font-size: 1.2rem; font-weight: 700;">${t.title}</h3>
+            <span class="tag" style="background: ${state.activeVersion === 'masterV2' ? 'rgba(236, 72, 153, 0.2)' : 'rgba(20, 184, 166, 0.2)'}; color: ${state.activeVersion === 'masterV2' ? '#ec4899' : 'var(--accent-teal)'};">
+              ${state.activeVersion === 'masterV2' ? '🚀 Master V2 (C1)' : '📘 Standard (B1/B2)'}
+            </span>
+          </div>
           <p style="color: var(--text-muted); font-size: 0.85rem;">${t.titleVi} | Mục tiêu: ${t.targetWords} từ</p>
         </div>
-        <div style="display: flex; gap: 0.5rem;">
-          ${TEMPLATES_DATA.map(item => `
-            <button class="btn btn-secondary ${item.id === t.id ? 'btn-primary' : ''}" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;" onclick="selectBlurtingTemplate('${item.id}')">
-              ${item.title.split(' ')[0]} ${item.title.split(' ')[1] || ''}
-            </button>
-          `).join('')}
+
+        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center;">
+          <div style="display: flex; gap: 0.25rem; background: rgba(0, 0, 0, 0.2); padding: 0.25rem; border-radius: var(--radius-sm); border: 1px solid var(--border-glass);">
+            <button class="btn ${state.activeVersion === 'normal' ? 'btn-primary' : 'btn-secondary'}" style="padding: 0.35rem 0.7rem; font-size: 0.75rem;" onclick="setTemplateVersion('normal')">📘 Standard</button>
+            <button class="btn ${state.activeVersion === 'masterV2' ? 'btn-primary' : 'btn-secondary'}" style="padding: 0.35rem 0.7rem; font-size: 0.75rem; ${state.activeVersion === 'masterV2' ? 'background: linear-gradient(135deg, #8b5cf6, #ec4899); border: none;' : ''}" onclick="setTemplateVersion('masterV2')">🚀 Master V2</button>
+          </div>
+
+          <div style="display: flex; gap: 0.4rem;">
+            ${TEMPLATES_DATA.map(item => `
+              <button class="btn btn-secondary ${item.id === rawTemplate.id ? 'btn-primary' : ''}" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;" onclick="selectBlurtingTemplate('${item.id}')">
+                ${item.title.split(' ')[0]} ${item.title.split(' ')[1] || ''}
+              </button>
+            `).join('')}
+          </div>
         </div>
       </div>
     </div>
@@ -378,7 +426,7 @@ function renderBlurtingTrainer() {
     html += `
       <div class="blurting-container">
         <div class="glass-card">
-          <h4 style="color: var(--accent-teal); margin-bottom: 1rem;">📖 Bài Mẫu Tiếng Anh (English Sample)</h4>
+          <h4 style="color: var(--accent-teal); margin-bottom: 1rem;">📖 Bài Mẫu Tiếng Anh (English Sample - ${state.activeVersion === 'masterV2' ? 'Master V2 C1' : 'Standard B1/B2'})</h4>
           <div style="white-space: pre-wrap; line-height: 1.8; font-size: 0.95rem;">${t.sampleText}</div>
         </div>
         <div class="glass-card">
@@ -393,7 +441,7 @@ function renderBlurtingTrainer() {
   } else if (currentStep === 2) {
     html += `
       <div class="glass-card">
-        <h4 style="color: var(--accent-amber); margin-bottom: 1rem;">📌 Dàn Ý Từ Khóa Theo Câu (Keywords Note)</h4>
+        <h4 style="color: var(--accent-amber); margin-bottom: 1rem;">📌 Dàn Ý Từ Khóa Theo Câu (Keywords Note - ${state.activeVersion === 'masterV2' ? 'Master V2 C1' : 'Standard'})</h4>
         <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">Đọc lướt qua dàn ý này 1-2 lần để ghi nhớ mạch văn trước khi che bài mẫu hoàn toàn.</p>
         <div style="display: flex; flex-direction: column; gap: 0.75rem;">
           ${t.keywordsSentenceMap.map((map, idx) => `
@@ -415,7 +463,7 @@ function renderBlurtingTrainer() {
     html += `
       <div class="glass-card">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 1rem;">
-          <h4 style="color: var(--accent-teal);">✍️ Che Bài Mẫu & Tự Viết Lại Từ Trí Nhớ</h4>
+          <h4 style="color: var(--accent-teal);">✍️ Che Bài Mẫu & Tự Viết Lại Từ Trí Nhớ (${state.activeVersion === 'masterV2' ? 'Master V2 C1' : 'Standard'})</h4>
           <div class="meta-counter">
             <span class="counter-badge" id="live-word-counter">📝 0 / ${t.targetWords} từ</span>
             <span class="counter-badge warning" id="blurting-timer-display">⏱️ 00:00</span>
@@ -475,7 +523,9 @@ function onBlurtingInput(textarea) {
   state.userTypedText = textarea.value;
   const wordCount = textarea.value.trim() ? textarea.value.trim().split(/\s+/).length : 0;
   const counter = document.getElementById('live-word-counter');
-  const target = state.activeBlurtingTemplate?.targetWords || 120;
+  const rawTemplate = state.activeBlurtingTemplate || TEMPLATES_DATA[0];
+  const t = getTemplateData(rawTemplate, state.activeVersion);
+  const target = t?.targetWords || 120;
   
   if (counter) {
     counter.innerHTML = `📝 ${wordCount} / ${target} từ`;
@@ -491,7 +541,10 @@ function finishBlurtingAndCheck() {
 
 /* RED-PEN DIFF ENGINE */
 function renderBlurtingDiffView() {
-  const original = (state.activeBlurtingTemplate?.sampleText || '').trim();
+  const rawTemplate = state.activeBlurtingTemplate || TEMPLATES_DATA[0];
+  const t = getTemplateData(rawTemplate, state.activeVersion);
+
+  const original = (t?.sampleText || '').trim();
   const userTyped = (state.userTypedText || '').trim();
 
   const origWords = original.split(/\s+/);
@@ -607,21 +660,39 @@ function showTemplateDetails(id, btnEl) {
   document.querySelectorAll('.template-btn').forEach(b => b.classList.remove('active'));
   if (btnEl) btnEl.classList.add('active');
 
-  const template = TEMPLATES_DATA.find(t => t.id === id);
-  if (template) {
-    renderTemplateDetailContent(template);
+  const rawTemplate = TEMPLATES_DATA.find(t => t.id === id);
+  if (rawTemplate) {
+    renderTemplateDetailContent(rawTemplate);
   }
 }
 
-function renderTemplateDetailContent(t) {
+function renderTemplateDetailContent(rawTemplate) {
   const view = document.getElementById('template-detail-view');
-  if (!view) return;
+  if (!view || !rawTemplate) return;
+
+  state.selectedTemplateId = rawTemplate.id;
+  const t = getTemplateData(rawTemplate, state.activeVersion);
 
   let html = `
+    <!-- Version Switcher Sub-tabs -->
+    <div style="margin-bottom: 1.5rem; display: flex; gap: 0.75rem; background: rgba(0, 0, 0, 0.2); padding: 0.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-glass);">
+      <button class="btn ${state.activeVersion === 'normal' ? 'btn-primary' : 'btn-secondary'}" style="flex: 1; padding: 0.65rem;" onclick="setTemplateVersion('normal')">
+        📘 Bản Standard (B1/B2 Tiêu Chuẩn)
+      </button>
+      <button class="btn ${state.activeVersion === 'masterV2' ? 'btn-primary' : 'btn-secondary'}" style="flex: 1; padding: 0.65rem; ${state.activeVersion === 'masterV2' ? 'background: linear-gradient(135deg, #8b5cf6, #ec4899); border: none;' : ''}" onclick="setTemplateVersion('masterV2')">
+        🚀 Bản Master V2 (B2+/C1 Nâng Cao Masterpiece)
+      </button>
+    </div>
+
     <div class="glass-card">
       <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
         <div>
-          <h3 style="font-size: 1.4rem; color: var(--accent-teal);">${t.title}</h3>
+          <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.3rem;">
+            <h3 style="font-size: 1.4rem; color: var(--accent-teal);">${t.title}</h3>
+            <span class="tag" style="background: ${state.activeVersion === 'masterV2' ? 'rgba(236, 72, 153, 0.2)' : 'rgba(20, 184, 166, 0.2)'}; color: ${state.activeVersion === 'masterV2' ? '#ec4899' : 'var(--accent-teal)'};">
+              ${state.activeVersion === 'masterV2' ? '🚀 Master V2 (C1)' : '📘 Standard (B1/B2)'}
+            </span>
+          </div>
           <p style="color: var(--text-muted); font-size: 0.9rem;">${t.description} | Target: ${t.targetWords} từ</p>
         </div>
         <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
@@ -638,7 +709,7 @@ function renderTemplateDetailContent(t) {
 
       ${t.skeletonText ? `
         <h4 style="color: var(--accent-amber); margin-bottom: 0.75rem;">1. DÀN Ý KHUNG DÙNG CHUNG (SKELETON TEMPLATE - ĐIỀN TỪ [TOPIC])</h4>
-        <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.75rem;">Dàn ý mẫu chuẩn có vị trí điền từ [Topic], [Advantage 1], [Disadvantage 1]... dùng làm khung sườn cho mọi bài viết:</p>
+        <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.75rem;">Dàn ý mẫu chuẩn (${state.activeVersion === 'masterV2' ? 'Bản Master V2 Band C1' : 'Bản Standard Band B1/B2'}) có vị trí điền từ [Topic], [Point 1], [Point 2]... dùng làm khung sườn cho mọi bài viết:</p>
         <div class="template-preview-box" style="margin-bottom: 2rem; border-color: rgba(245, 158, 11, 0.3); background: rgba(245, 158, 11, 0.05);">${t.skeletonText}</div>
       ` : ''}
 

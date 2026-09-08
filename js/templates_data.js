@@ -81,7 +81,81 @@ const TEMPLATES_DATA = [
           "Yours faithfully, / Yours sincerely,"
         ]
       }
-    ]
+    ],
+    "masterV2": {
+      "title": "Formal Letter (Bản Master V2 - Band C1)",
+      "targetWords": 150,
+      "description": "Phiên bản nâng cao C1 với văn phong hành chính cao cấp, từ vựng chuyên môn và cấu trúc câu phức chuẩn mực.",
+      "skeletonText": "Salutation:\nDear Sir or Madam, (or Dear Mr./Ms. [Surname],)\n\nOpening Paragraph:\nI am writing to formally express my keen interest in [Subject/Course/Position] at your esteemed organization. Having followed your institution’s academic achievements with great admiration, I am eager to contribute to and benefit from your professional domain.\n\nBody Paragraph 1 (Academic Background & Qualifications):\nRegarding my professional background, I hold a Bachelor’s degree in [Field] and have accumulated over [Number] years of hands-on experience as a [Job Title]. In my current role, I am primarily responsible for overseeing complex operations, managing client communications, and optimizing workflow efficiency.\n\nBody Paragraph 2 (Strategic Alignment & Rationale):\nMy primary motivation for applying for this program stems from a desire to acquire cutting-edge methodologies in [Domain]. Given your institution's stellar reputation for academic rigor, I am confident that this course will equip me with the strategic insights required to elevate my career.\n\nClosing Paragraph & Sign-off:\nThank you in advance for considering my application. Should you require any further documentation, please do not hesitate to contact me at your earliest convenience. I look forward to hearing from you soon.\n\nYours faithfully,\n[Your Name]",
+      "sampleText": "Dear Sir or Madam,\n\nI am writing to formally express my keen interest in the Advanced Business English Course at your esteemed training institute. Having followed your organization’s academic achievements with great admiration, I am eager to contribute to and benefit from your professional domain.\n\nRegarding my professional background, I hold a Bachelor’s degree in Information Technology and have accumulated over three years of hands-on experience as a senior software specialist. In my current role, I am primarily responsible for overseeing complex client projects, facilitating international communications, and optimizing workflow efficiency.\n\nMy primary motivation for applying for this program stems from a desire to acquire cutting-edge communication methodologies in corporate environments. Given your institution's stellar reputation for academic rigor and flexible scheduling, I am confident that this course will equip me with the strategic insights required to manage international software deployments seamlessly.\n\nThank you in advance for considering my application. Should you require any further documentation, please do not hesitate to contact me at your earliest convenience via email. I look forward to hearing from you soon.\n\nYours faithfully,\n[Your Name]",
+      "translationVi": "Kính gửi Ông/Bà,\n\nTôi viết thư này để chính thức bày tỏ sự quan tâm sâu sắc đến Khóa học Tiếng Anh Thương mại Nâng cao tại viện đào tạo quý báu của ông/bà. Sau khi theo dõi những thành tựu học thuật của tổ chức với sự ngưỡng mộ lớn, tôi rất khao khát được đóng góp và thụ hưởng từ lĩnh vực chuyên môn của quý viện.\n\nVề nền tảng chuyên môn, tôi sở hữu bằng Cử nhân Công nghệ Thông tin và đã tích lũy hơn 3 năm kinh nghiệm thực chiến với tư cách là chuyên viên phần mềm cao cấp. Trong vai trò hiện tại, tôi chịu trách nhiệm chính về việc giám sát các dự án khách hàng phức tạp, thúc đẩy giao tiếp quốc tế và tối ưu hóa hiệu suất làm việc.\n\nĐộng lực chính của tôi khi nộp đơn cho chương trình này xuất phát từ mong muốn tiếp thu các phương pháp luận giao tiếp tiên tiến trong môi trường doanh nghiệp. Với uy tín lừng lẫy của quý viện về sự nghiêm túc học thuật và lịch học linh hoạt, tôi tin tưởng chắc chắn rằng khóa học này sẽ trang bị cho tôi những góc nhìn chiến lược cần thiết để quản lý các dự án triển khai phần mềm quốc tế một cách mượt mà.\n\nXin cảm ơn ông/bà trước vì đã xem xét đơn đăng ký của tôi. Nếu ông/bà yêu cầu thêm bất kỳ tài liệu nào, xin vui lòng liên hệ với tôi sớm nhất có thể qua email. Tôi rất mong nhận được phản hồi từ ông/bà.\n\nTrân trọng,\n[Tên của bạn]",
+      "keywordsSentenceMap": [
+        {
+          "sentenceIndex": 1,
+          "keywords": ["formally express keen interest", "esteemed training institute", "followed achievements admiration"]
+        },
+        {
+          "sentenceIndex": 2,
+          "keywords": ["Bachelor's degree IT", "accumulated three years experience", "senior software specialist"]
+        },
+        {
+          "sentenceIndex": 3,
+          "keywords": ["primarily responsible for", "overseeing complex projects", "facilitating communications"]
+        },
+        {
+          "sentenceIndex": 4,
+          "keywords": ["primary motivation stems from", "acquire cutting-edge methodologies", "corporate environments"]
+        },
+        {
+          "sentenceIndex": 5,
+          "keywords": ["stellar reputation academic rigor", "equip strategic insights", "manage deployments seamlessly"]
+        },
+        {
+          "sentenceIndex": 6,
+          "keywords": ["considering application", "require further documentation", "earliest convenience", "Yours faithfully"]
+        }
+      ],
+      "structure": [
+        {
+          "section": "Formal Salutation",
+          "options": [
+            "Dear Sir or Madam, (Khi không biết tên người nhận)",
+            "Dear Mr./Ms. [Surname], (Khi đã biết tên người nhận)"
+          ]
+        },
+        {
+          "section": "C1 Opening Statement",
+          "phrases": [
+            "I am writing to formally express my keen interest in [Subject]...",
+            "Having followed your organization's achievements with great admiration...",
+            "I am eager to contribute to and benefit from your professional domain."
+          ]
+        },
+        {
+          "section": "C1 Qualifications & Experience",
+          "phrases": [
+            "I hold a Bachelor's degree in [Field] and have accumulated over [N] years of experience...",
+            "In my current role, I am primarily responsible for overseeing [Operations]..."
+          ]
+        },
+        {
+          "section": "C1 Strategic Rationale",
+          "phrases": [
+            "My primary motivation stems from a desire to acquire cutting-edge methodologies in...",
+            "Given your institution's stellar reputation for academic rigor...",
+            "I am confident this program will equip me with strategic insights..."
+          ]
+        },
+        {
+          "section": "C1 Formal Closing",
+          "phrases": [
+            "Thank you in advance for considering my application.",
+            "Should you require any further documentation, please do not hesitate to contact me at your earliest convenience.",
+            "Yours faithfully, / Yours sincerely,"
+          ]
+        }
+      ]
+    }
   },
   {
     "id": "informal_letter",
@@ -153,7 +227,76 @@ const TEMPLATES_DATA = [
           "Best regards, / Warm wishes,"
         ]
       }
-    ]
+    ],
+    "masterV2": {
+      "title": "Informal Letter (Bản Master V2 - Band C1)",
+      "targetWords": 150,
+      "description": "Phiên bản nâng cao C1 với ngôn ngữ tự nhiên, từ vựng bản ngữ phong phú (idiomatic expressions) và lối viết cuốn hút.",
+      "skeletonText": "Salutation:\nDear [Friend's Name],\n\nOpening Paragraph:\nI hope this letter finds you and your family in high spirits! It was such a delight to receive your recent update. Please accept my sincere apologies for the slight delay in replying; I have been fully immersed in an intensive preparation program over the past few weeks.\n\nBody Paragraph 1 (Core Advice & Insider Insights):\nI was thrilled to hear about your upcoming journey to [Destination], and I would love to share a few insider recommendations to ensure your trip is nothing short of extraordinary. First and foremost, visiting [Location] is an absolute must. The breathtaking natural scenery, combined with its vibrant culinary scene, offers a uniquely enriching atmosphere.\n\nBody Paragraph 2 (Practical Logistics & Encouragement):\nRegarding accommodation, I highly recommend securing a room in advance to wake up to spectacular views. Furthermore, please rest assured regarding any potential language barriers—the locals are renowned for their exceptional warmth and hospitality, always ready to lend a helping hand.\n\nClosing Paragraph & Sign-off:\nAnyway, I must wrap this up and get back to my evening study session. Please convey my warmest regards to your family. I am truly looking forward to catching up in person soon!\n\nWarmest wishes,\n[Your Name]",
+      "sampleText": "Dear Alex,\n\nI hope this letter finds you and your family in high spirits! It was such a delight to receive your recent update. Please accept my sincere apologies for the slight delay in replying; I have been fully immersed in an intensive VSTEP B2/C1 preparation program over the past few weeks.\n\nI was thrilled to hear about your upcoming summer trip to Vietnam, and I would love to share a few insider recommendations to ensure your experience is nothing short of extraordinary. First and foremost, spending a few days exploring Da Nang city is an absolute must. The breathtaking coastal vistas, combined with its vibrant street food culture, offer a uniquely enriching atmosphere that you simply cannot miss.\n\nRegarding accommodation, I highly recommend securing a beachfront boutique hotel well in advance to enjoy fresh ocean breezes and spectacular sunrise views. Furthermore, please rest assured regarding any potential language barriers—the local people are renowned for their exceptional warmth and hospitality, always eager to lend a helping hand to travelers.\n\nAnyway, I must wrap this up and get back to my evening study session. Please convey my warmest regards to your family. I am truly looking forward to catching up in person soon!\n\nWarmest wishes,\n[Your Name]",
+      "translationVi": "Alex thân mến,\n\nTớ hy vọng lá thư này đến tay bạn khi bạn và gia đình đều tràn đầy tinh thần phấn chấn! Rất vui mừng khi nhận được tin tức mới nhất từ bạn. Xin hãy chấp nhận lời xin lỗi chân thành của tớ vì sự phản hồi chậm trễ này; tớ đã hoàn toàn đắm chìm vào một chương trình luyện thi VSTEP B2/C1 cấp tốc trong vài tuần qua.\n\nTớ vô cùng hào hứng khi nghe về chuyến du lịch hè sắp tới của bạn tới Việt Nam, và tớ rất muốn chia sẻ vài gợi ý mang tính 'người trong cuộc' để đảm bảo trải nghiệm của bạn không có gì tuyệt vời hơn thế. Trước hết và quan trọng nhất, dành vài ngày khám phá thành phố Đà Nẵng là điều tuyệt đối không thể bỏ qua. Cảnh quan bờ biển hùng vĩ, kết hợp với văn hóa ẩm thực đường phố sôi động, mang lại một không khí phong phú độc đáo mà bạn đơn giản là không thể bỏ lỡ.\n\nVề chỗ ở, tớ rất khuyên bạn nên đặt trước một khách sạn boutique ven biển từ sớm để tận hưởng làn gió biển tươi mát và cảnh bình minh ngoạn mục. Hơn nữa, xin bạn hãy yên tâm về bất kỳ rào cản ngôn ngữ tiềm ẩn nào—người dân địa phương nổi tiếng với sự nồng hậu và hiếu khách tuyệt vời, luôn sẵn sàng giúp đỡ du khách.\n\nDù sao thì tớ phải khép lại lá thư này để quay lại buổi học tối đây. Cho tớ gửi lời chào ấm áp nhất tới gia đình bạn nhé. Tớ thực sự rất mong chờ được gặp mặt và trò chuyện trực tiếp với bạn sớm!\n\nNhững lời chúc ấm áp nhất,\n[Tên của bạn]",
+      "keywordsSentenceMap": [
+        {
+          "sentenceIndex": 1,
+          "keywords": ["finds high spirits", "delight to receive update", "apologies slight delay", "fully immersed"]
+        },
+        {
+          "sentenceIndex": 2,
+          "keywords": ["thrilled upcoming trip", "insider recommendations", "nothing short of extraordinary"]
+        },
+        {
+          "sentenceIndex": 3,
+          "keywords": ["exploring Da Nang absolute must", "breathtaking coastal vistas", "vibrant street food", "enriching atmosphere"]
+        },
+        {
+          "sentenceIndex": 4,
+          "keywords": ["securing beachfront hotel", "spectacular sunrise views", "rest assured language barriers"]
+        },
+        {
+          "sentenceIndex": 5,
+          "keywords": ["renowned exceptional warmth", "hospitality eager to lend hand"]
+        },
+        {
+          "sentenceIndex": 6,
+          "keywords": ["wrap this up", "warmest regards family", "catching up in person", "Warmest wishes"]
+        }
+      ],
+      "structure": [
+        {
+          "section": "C1 Warm Opening",
+          "phrases": [
+            "I hope this letter finds you and your family in high spirits!",
+            "It was such a delight to receive your recent update.",
+            "Please accept my sincere apologies for the slight delay in replying..."
+          ]
+        },
+        {
+          "section": "C1 Insider Recommendations",
+          "phrases": [
+            "I would love to share a few insider recommendations to ensure your trip is nothing short of extraordinary.",
+            "First and foremost, [Location] is an absolute must.",
+            "The breathtaking vistas combined with [Aspect] offer a uniquely enriching atmosphere..."
+          ]
+        },
+        {
+          "section": "C1 Practical Advice & Reassurance",
+          "phrases": [
+            "Regarding accommodation, I highly recommend securing [Room] well in advance...",
+            "Please rest assured regarding any potential language barriers...",
+            "The locals are renowned for their exceptional warmth and hospitality..."
+          ]
+        },
+        {
+          "section": "C1 Affectionate Sign-off",
+          "phrases": [
+            "Anyway, I must wrap this up and get back to my study session.",
+            "Please convey my warmest regards to your family.",
+            "I am truly looking forward to catching up in person soon!",
+            "Warmest wishes, / Best regards,"
+          ]
+        }
+      ]
+    }
   },
   {
     "id": "advantage_essay",
@@ -232,7 +375,85 @@ const TEMPLATES_DATA = [
           "Therefore, efficient use should be promoted, whereas misuse should be prevented."
         ]
       }
-    ]
+    ],
+    "masterV2": {
+      "title": "Advantage & Disadvantage Essay (Bản Master V2 - Band C1)",
+      "targetWords": 280,
+      "description": "Phiên bản nâng cao C1 phân tích đa chiều với cấu trúc lập luận quy chuẩn, từ vựng học thuật cao và đánh giá tác động sâu sắc.",
+      "skeletonText": "Introduction:\nIn the contemporary era, the rapid development of [Topic] has emerged as a cornerstone of socio-economic progress, yielding both profound merits and notable complexities. Although critics point toward certain intrinsic vulnerabilities, I am convinced that the constructive outcomes far outweigh the adverse ramifications. This essay aims to critically evaluate both sides of the issue before drawing a logical conclusion.\n\nBody 1: Multifaceted Advantages:\nTo begin with, the adoption of [Topic] offers a myriad of compelling benefits. Paramount among these is that [Advantage 1: Diễn giải ưu điểm 1 + hệ quả tích cực]. Furthermore, it is noteworthy that [Advantage 2: Diễn giải ưu điểm 2]. Additionally, [Advantage 3: Diễn giải ưu điểm 3], thereby driving sustainable societal advancement.\n\nBody 2: Inherent Shortcomings & Strategic Mitigation:\nConversely, it would be remiss to ignore the underlying shortcomings associated with [Topic]. A primary drawback lies in [Disadvantage 1: Diễn giải nhược điểm 1 + tác động tiêu cực]. Furthermore, concerns have been voiced regarding [Disadvantage 2: Diễn giải nhược điểm 2]. In addition, empirical evidence suggests that without robust policy frameworks and sensible utilization, such drawbacks could inadvertently impede long-term growth.\n\nConclusion:\nTo synthesize, every major societal evolution inevitably entails a duality of advantages and drawbacks. While [Topic] presents non-negligible challenges, its multifaceted benefits remain indispensable to modern progress. Consequently, visionary policies must be instituted to harness its full potential while systematically mitigating its negative externalities.",
+      "sampleText": "In the contemporary era, the exponential expansion of public transit networks has emerged as a cornerstone of urban progress, yielding both profound merits and notable complexities. Although critics point toward certain operational vulnerabilities, I am convinced that the constructive outcomes far outweigh the adverse ramifications. This essay aims to critically evaluate both sides of the issue before drawing a logical conclusion.\n\nTo begin with, the comprehensive adoption of public transport offers a myriad of compelling benefits. Paramount among these is that traveling via high-speed buses or rail systems drastically enhances passenger safety, resulting in a substantial decline in road fatalities. Furthermore, it is noteworthy that public transit fosters environmental sustainability by curbing greenhouse gas emissions and reducing urban carbon footprints. Additionally, commuting on modern transit systems liberates individuals from driving stress, enabling them to engage in productive tasks or mental relaxation during transit, thereby elevating overall living standards.\n\nConversely, it would be remiss to ignore the underlying shortcomings associated with mass public transport. A primary drawback lies in infrastructural bottlenecks and periodic delays, particularly in rapidly growing metropolitan areas. Furthermore, serious concerns have been voiced regarding severe peak-hour congestion, which heightens discomfort and escalates the transmission risk of airborne illnesses. In addition, empirical evidence suggests that without continuous municipal investment and modernized management, such systems may fail to satisfy growing commuting demands.\n\nTo synthesize, every major infrastructure evolution inevitably entails a duality of advantages and drawbacks. While public transit presents non-negligible challenges regarding peak-hour congestion and operational delays, its multifaceted safety and environmental benefits remain indispensable to modern civilization. Consequently, visionary policies must be instituted to upgrade transit infrastructure while systematically mitigating its negative externalities.",
+      "translationVi": "Trong kỷ nguyên hiện đại, sự mở rộng theo cấp số nhân của các mạng lưới giao thông công cộng đã nổi lên như một viên đá tảng của sự tiến bộ đô thị, mang lại cả những lợi ích sâu sắc lẫn những phức tạp đáng chú ý. Mặc dù các nhà phê bình chỉ ra một số lỗ hổng vận hành nhất định, tôi tin tưởng chắc chắn rằng những kết quả tích cực vượt xa các hệ lụy tiêu cực. Bài luận này nhằm mục đích đánh giá một cách phê phán cả hai mặt của vấn đề trước khi đưa ra kết luận hợp lý.\n\nĐầu tiên, việc áp dụng toàn diện giao thông công cộng mang lại vô số lợi ích thuyết phục. Tối quan trọng trong số này là việc di chuyển qua hệ thống xe buýt tốc độ cao hoặc đường sắt giúp tăng cường đáng kể sự an toàn của hành khách, dẫn đến sự sụt giảm đáng kể tỷ lệ tử vong do tai nạn giao thông. Hơn nữa, đáng chú ý là giao thông công cộng thúc đẩy sự bền vững môi trường bằng cách cắt giảm lượng phát thải khí nhà kính và giảm dấu chân cacbon đô thị. Thêm vào đó, việc đi lại trên các hệ thống giao thông hiện đại giải phóng cá nhân khỏi căng thẳng khi lái xe, cho phép họ tham gia vào các công việc năng suất hoặc thư giãn tinh thần trong quá trình di chuyển, từ đó nâng cao mức sống tổng thể.\n\nNgược lại, sẽ là thiếu sót nếu bỏ qua những nhược điểm tiềm ẩn gắn liền với giao thông công cộng khối lượng lớn. Một nhược điểm chính nằm ở các điểm nghẽn hạ tầng và sự chậm trễ định kỳ, đặc biệt là ở các khu vực đô thị phát triển nhanh chóng. Hơn nữa, những lo ngại nghiêm trọng đã được dấy lên về tình trạng ùn tắc cực kỳ gay gắt vào giờ cao điểm, làm tăng sự khó chịu và leo thang nguy cơ lây truyền các bệnh lây qua đường hô hấp. Ngoài ra, các bằng chứng thực nghiệm cho thấy rằng nếu không có sự đầu tư liên tục của thành phố và quản lý hiện đại hóa, các hệ thống như vậy có thể thất bại trong việc đáp ứng nhu cầu đi lại ngày càng tăng.\n\nTóm lại, mọi sự phát triển hạ tầng lớn đều tất yếu kéo theo hai mặt ưu điểm và nhược điểm. Mặc dù giao thông công cộng đặt ra những thách thức không thể coi nhẹ về sự đông đúc giờ cao điểm và chậm trễ vận hành, nhưng những lợi ích đa chiều về an toàn và môi trường của nó vẫn là không thể thiếu đối với văn minh hiện đại. Do đó, các chính sách tầm nhìn xa phải được ban hành để nâng cấp hạ tầng giao thông đồng thời giảm thiểu một cách hệ thống các tác động ngoại ứng tiêu cực của nó.",
+      "keywordsSentenceMap": [
+        {
+          "sentenceIndex": 1,
+          "keywords": ["exponential expansion public transit", "cornerstone urban progress", "profound merits notable complexities"]
+        },
+        {
+          "sentenceIndex": 2,
+          "keywords": ["constructive outcomes outweigh adverse ramifications", "critically evaluate both sides"]
+        },
+        {
+          "sentenceIndex": 3,
+          "keywords": ["myriad compelling benefits", "drastically enhances safety", "decline road fatalities"]
+        },
+        {
+          "sentenceIndex": 4,
+          "keywords": ["fosters environmental sustainability", "curbing greenhouse emissions", "reducing carbon footprints"]
+        },
+        {
+          "sentenceIndex": 5,
+          "keywords": ["liberates driving stress", "engage in productive tasks", "elevating living standards"]
+        },
+        {
+          "sentenceIndex": 6,
+          "keywords": ["remiss ignore underlying shortcomings", "infrastructural bottlenecks", "periodic delays"]
+        },
+        {
+          "sentenceIndex": 7,
+          "keywords": ["peak-hour congestion", "transmission risk airborne illnesses", "empirical evidence suggests"]
+        },
+        {
+          "sentenceIndex": 8,
+          "keywords": ["duality advantages drawbacks", "indispensable modern civilization", "visionary policies negative externalities"]
+        }
+      ],
+      "structure": [
+        {
+          "section": "C1 Sophisticated Introduction",
+          "phrases": [
+            "In the contemporary era, the expansion of [Topic] has emerged as a cornerstone of socio-economic progress...",
+            "Although critics point toward certain vulnerabilities, I am convinced that the constructive outcomes far outweigh the adverse ramifications.",
+            "This essay aims to critically evaluate both sides of the issue before drawing a logical conclusion."
+          ]
+        },
+        {
+          "section": "C1 Multifaceted Advantages",
+          "phrases": [
+            "To begin with, the adoption of [Topic] offers a myriad of compelling benefits.",
+            "Paramount among these is that [Advantage 1 + Consequence].",
+            "Furthermore, it is noteworthy that [Advantage 2].",
+            "Additionally, [Advantage 3], thereby elevating overall quality of life."
+          ]
+        },
+        {
+          "section": "C1 Inherent Shortcomings & Evidence",
+          "phrases": [
+            "Conversely, it would be remiss to ignore the underlying shortcomings associated with [Topic].",
+            "A primary drawback lies in [Disadvantage 1 + Impact].",
+            "Furthermore, serious concerns have been voiced regarding [Disadvantage 2].",
+            "In addition, empirical evidence suggests that without robust management, such drawbacks could impede growth."
+          ]
+        },
+        {
+          "section": "C1 Balanced Conclusion",
+          "phrases": [
+            "To synthesize, every major evolution inevitably entails a duality of advantages and drawbacks.",
+            "While [Topic] presents non-negligible challenges, its multifaceted benefits remain indispensable.",
+            "Consequently, visionary policies must be instituted to harness its potential while mitigating negative externalities."
+          ]
+        }
+      ]
+    }
   },
   {
     "id": "discussion_essay",
@@ -309,6 +530,79 @@ const TEMPLATES_DATA = [
           "Therefore, efficient use should be promoted, whereas misuse should be prevented."
         ]
       }
-    ]
+    ],
+    "masterV2": {
+      "title": "Discussion / Opinion Essay (Bản Master V2 - Band C1)",
+      "targetWords": 280,
+      "description": "Phiên bản nâng cao C1 lập luận phản biện sắc bén, kết hợp cấu trúc câu phức academic và phân tích giải pháp chuyên sâu.",
+      "skeletonText": "Introduction:\nIn contemporary society, the rapid expansion of [Topic] has sparked intense academic and public discourse worldwide, particularly in developing economies like Vietnam. While one school of thought contends that [Opposing View/Drawback], I firmly side with those who maintain that [My Stance/Advantage] exerts a far more transformative influence. This essay will examine both perspectives before corroborating my position with compelling evidence.\n\nBody 1: Primary Argument & Empirical Support:\nOn the one hand, substantial evidence indicates that [Point 1: e.g. technological integration enhances operational efficiency]. To elaborate, [Explanation]. A salient example illustrating this is [Example 1]. This underscores the premise that [Topic] serves as a vital catalyst for human progress rather than a temporary trend.\n\nBody 2: Counter Perspective & Evidence-based Mitigation:\nOn the other hand, skeptics frequently raise legitimate concerns regarding [Point 2: e.g. potential social isolation or job displacement]. This sentiment stems from the fact that [Explanation 2]. For instance, [Example 2]. In addition, available research and evidence suggest that implementing strategic policy frameworks and proactive education can effectively harmonize technological adoption with societal well-being.\n\nConclusion:\nIn conclusion, while the apprehension surrounding [Topic] is understandable, the overwhelming benefits it yields in terms of productivity and living standards cannot be overlooked. Ultimately, visionary governance and continuous human adaptation remain essential to maximizing its potential while mitigating societal risks.",
+      "sampleText": "In contemporary society, the rapid expansion of artificial intelligence and automated systems has sparked intense academic and public discourse worldwide, particularly in emerging economies like Vietnam. While one school of thought contends that technological automation threatens job security for manual laborers, I firmly side with those who maintain that technological innovation exerts a far more transformative influence on human productivity. This essay will examine both perspectives before corroborating my position with compelling evidence.\n\nOn the one hand, substantial evidence indicates that automated systems drastically optimize operational efficiency across industries. To elaborate, smart algorithms and robotic machinery handle repetitive, labor-intensive tasks—such as big data processing and precision manufacturing—with unprecedented speed and accuracy. A salient example illustrating this is the widespread adoption of online banking platforms, which allow millions of citizens to complete complex financial transactions instantaneously. This underscores the premise that technological integration serves as a vital catalyst for economic evolution rather than a hindrance to employment.\n\nOn the other hand, skeptics frequently raise legitimate concerns regarding potential social isolation and skill obsolescence among workers. This sentiment stems from the fact that excessive reliance on digital screens reduces direct interpersonal communication in workplaces and domestic environments. For instance, many young individuals nowadays prioritize virtual interactions over face-to-face community engagements. In addition, available research and evidence suggest that implementing proactive reskilling programs and digital governance can effectively harmonize technological adoption with workforce stability.\n\nIn conclusion, while the apprehension surrounding rapid technological automation is understandable, the overwhelming benefits it yields in terms of productivity and living standards cannot be overlooked. Ultimately, visionary governance and continuous human adaptation remain essential to maximizing technological potential while systematically mitigating societal risks.",
+      "translationVi": "Trong xã hội đương đại, sự phát triển nhanh chóng của trí tuệ nhân tạo và các hệ thống tự động hóa đã châm ngòi cho các cuộc thảo luận học thuật và công cộng gay gắt trên toàn thế giới, đặc biệt là ở các nền kinh tế đang nổi như Việt Nam. Trong khi một trường phái tư tưởng cho rằng tự động hóa công nghệ đe dọa an ninh việc làm cho lao động chân tay, tôi hoàn toàn đứng về phía những người khẳng định rằng đổi mới công nghệ tạo ra một ảnh hưởng mang tính biến đổi sâu sắc hơn nhiều đối với năng suất của con người. Bài luận này sẽ xem xét cả hai góc nhìn trước khi chứng minh quan điểm của tôi bằng những bằng chứng thuyết phục.\n\nMột mặt, các bằng chứng đáng kể chỉ ra rằng các hệ thống tự động hóa giúp tối ưu hóa mạnh mẽ hiệu suất vận hành trong các ngành công nghiệp. Chi tiết hơn, các thuật toán thông minh và máy móc rô-bốt xử lý các nhiệm vụ lặp đi lặp lại, tốn nhiều sức lao động—như xử lý dữ liệu lớn và sản xuất chính xác—với tốc độ và độ chính xác chưa từng có. Một ví dụ nổi bật minh họa cho điều này là việc áp dụng rộng rãi các nền tảng ngân hàng trực tuyến, cho phép hàng triệu người dân hoàn thành các giao dịch tài chính phức tạp ngay lập tức. Điều này nhấn mạnh tiền đề rằng sự tích hợp công nghệ đóng vai trò như một chất xúc tác thiết yếu cho sự phát triển kinh tế chứ không phải là một vật cản đối với việc làm.\n\nMặt khác, những người hoài nghi thường xuyên dấy lên những lo ngại chính đáng về nguy cơ cô lập xã hội và sự lỗi thời kỹ năng của người lao động. Quan điểm này xuất phát từ thực tế là sự phụ thuộc quá mức vào màn hình kỹ thuật số làm giảm sự giao tiếp trực tiếp giữa người với người tại nơi làm việc và môi trường gia đình. Chẳng hạn, nhiều người trẻ ngày nay ưu tiên các tương tác ảo hơn là tham gia các hoạt động cộng đồng trực tiếp. Ngoài ra, các nghiên cứu và bằng chứng hiện có cho thấy rằng việc thực thi các chương trình đào tạo lại kỹ năng chủ động và quản trị kỹ thuật số có thể hài hòa một cách hiệu quả việc áp dụng công nghệ với sự ổn định của lực lượng lao động.\n\nTóm lại, mặc dù sự lo lắng xung quanh việc tự động hóa công nghệ nhanh chóng là điều có thể hiểu được, những lợi ích áp đảo mà nó mang lại về mặt năng suất và mức sống là không thể phủ nhận. Cuối cùng, quản trị có tầm nhìn xa và sự thích ứng liên tục của con người vẫn là yếu tố thiết yếu để tối đa hóa tiềm năng công nghệ đồng thời giảm thiểu một cách hệ thống các rủi ro xã hội.",
+      "keywordsSentenceMap": [
+        {
+          "sentenceIndex": 1,
+          "keywords": ["contemporary society expansion AI", "sparked intense academic discourse", "emerging economies"]
+        },
+        {
+          "sentenceIndex": 2,
+          "keywords": ["automation threatens job security", "firmly side with technological innovation", "transformative influence"]
+        },
+        {
+          "sentenceIndex": 3,
+          "keywords": ["substantial evidence indicates", "drastically optimize operational efficiency", "repetitive labor-intensive tasks"]
+        },
+        {
+          "sentenceIndex": 4,
+          "keywords": ["salient example online banking", "transactions instantaneously", "vital catalyst economic evolution"]
+        },
+        {
+          "sentenceIndex": 5,
+          "keywords": ["skeptics raise legitimate concerns", "social isolation skill obsolescence", "excessive reliance digital screens"]
+        },
+        {
+          "sentenceIndex": 6,
+          "keywords": ["In addition evidence suggests", "proactive reskilling programs", "harmonize technological adoption"]
+        },
+        {
+          "sentenceIndex": 7,
+          "keywords": ["apprehension understandable", "overwhelming benefits productivity", "visionary governance human adaptation"]
+        }
+      ],
+      "structure": [
+        {
+          "section": "C1 Academic Introduction",
+          "phrases": [
+            "In contemporary society, the rapid expansion of [Topic] has sparked intense academic discourse...",
+            "While one school of thought contends that [Opposing View], I firmly side with those who maintain that [My Stance]...",
+            "This essay will examine both perspectives before corroborating my position with compelling evidence."
+          ]
+        },
+        {
+          "section": "C1 Primary Argument & Evidence",
+          "phrases": [
+            "On the one hand, substantial evidence indicates that [Point 1 + Optimization].",
+            "To elaborate, [Explanation].",
+            "A salient example illustrating this is [Example 1].",
+            "This underscores the premise that [Topic] serves as a vital catalyst for economic evolution."
+          ]
+        },
+        {
+          "section": "C1 Counter Stance & Evidence-based Mitigation",
+          "phrases": [
+            "On the other hand, skeptics frequently raise legitimate concerns regarding [Point 2].",
+            "This sentiment stems from the fact that [Explanation 2].",
+            "For instance, [Example 2].",
+            "In addition, available research and evidence suggest that proactive policy frameworks can harmonize adoption with stability."
+          ]
+        },
+        {
+          "section": "C1 Nuanced Conclusion",
+          "phrases": [
+            "In conclusion, while the apprehension surrounding [Topic] is understandable, the overwhelming benefits cannot be overlooked.",
+            "Ultimately, visionary governance and continuous human adaptation remain essential to maximizing potential while mitigating risks."
+          ]
+        }
+      ]
+    }
   }
 ];

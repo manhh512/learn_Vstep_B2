@@ -622,14 +622,27 @@ function renderTemplateDetailContent(t) {
       <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
         <div>
           <h3 style="font-size: 1.4rem; color: var(--accent-teal);">${t.title}</h3>
-          <p style="color: var(--text-muted); font-size: 0.9rem;">${t.description}</p>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">${t.description} | Target: ${t.targetWords} từ</p>
         </div>
-        <button class="btn btn-secondary copy-btn" onclick="copyTextToClipboard(\`${escapeQuotes(t.sampleText)}\`)">
-          📋 Sao Chép Template
-        </button>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          ${t.skeletonText ? `
+            <button class="btn btn-primary copy-btn" onclick="copyTextToClipboard(\`${escapeQuotes(t.skeletonText)}\`, 'Dàn ý khung điền từ')">
+              📋 Sao Chép Dàn Ý Khung
+            </button>
+          ` : ''}
+          <button class="btn btn-secondary copy-btn" onclick="copyTextToClipboard(\`${escapeQuotes(t.sampleText)}\`, 'Bài mẫu hoàn chỉnh')">
+            📝 Sao Chép Bài Mẫu
+          </button>
+        </div>
       </div>
 
-      <h4 style="color: var(--accent-indigo); margin-bottom: 0.75rem;">1. CẤU TRÚC VĂN BẢN CHUẨN (MASTER FORMULA)</h4>
+      ${t.skeletonText ? `
+        <h4 style="color: var(--accent-amber); margin-bottom: 0.75rem;">1. DÀN Ý KHUNG DÙNG CHUNG (SKELETON TEMPLATE - ĐIỀN TỪ [TOPIC])</h4>
+        <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.75rem;">Dàn ý mẫu chuẩn có vị trí điền từ [Topic], [Advantage 1], [Disadvantage 1]... dùng làm khung sườn cho mọi bài viết:</p>
+        <div class="template-preview-box" style="margin-bottom: 2rem; border-color: rgba(245, 158, 11, 0.3); background: rgba(245, 158, 11, 0.05);">${t.skeletonText}</div>
+      ` : ''}
+
+      <h4 style="color: var(--accent-indigo); margin-bottom: 0.75rem;">2. CẤU TRÚC VĂN BẢN CHUẨN (MASTER FORMULA)</h4>
       <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem;">
         ${t.structure.map(s => `
           <div style="background: rgba(255, 255, 255, 0.03); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-glass);">
@@ -641,8 +654,13 @@ function renderTemplateDetailContent(t) {
         `).join('')}
       </div>
 
-      <h4 style="color: var(--accent-indigo); margin-bottom: 0.75rem;">2. BÀI MẪU HOÀN CHỈNH (SAMPLE ESSAY/LETTER)</h4>
-      <div class="template-preview-box">${t.sampleText}</div>
+      <h4 style="color: var(--accent-teal); margin-bottom: 0.75rem;">3. BÀI MẪU MINH HỌA HOÀN CHỈNH (SAMPLE ESSAY/LETTER)</h4>
+      <div class="template-preview-box" style="margin-bottom: 2rem;">${t.sampleText}</div>
+
+      ${t.translationVi ? `
+        <h4 style="color: var(--accent-cyan); margin-bottom: 0.75rem;">4. DỊCH NGHĨA TIẾNG VIỆT (VIETNAMESE TRANSLATION)</h4>
+        <div class="template-preview-box" style="background: rgba(6, 182, 212, 0.05); border-color: rgba(6, 182, 212, 0.3); color: var(--text-muted);">${t.translationVi}</div>
+      ` : ''}
     </div>
   `;
 
@@ -653,9 +671,9 @@ function escapeQuotes(str) {
   return str.replace(/`/g, '\\`').replace(/\$/g, '\\$');
 }
 
-function copyTextToClipboard(text) {
+function copyTextToClipboard(text, label = 'Nội dung') {
   navigator.clipboard.writeText(text).then(() => {
-    alert('Đã sao chép template vào bộ nhớ tạm!');
+    alert(`Đã sao chép ${label} vào bộ nhớ tạm!`);
   }).catch(err => {
     console.error('Lỗi khi sao chép:', err);
   });
